@@ -1,18 +1,17 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <iostream>
 
 #include "entity.hpp"
 #pragma once
 
-#define BLOCK_SIZE      32
-#define JUMP_SPEED      15
-#define FALL_SPEED_MAX  15
+#define BLOCK_SIZE 32
+#define JUMP_SPEED 15
+#define FALL_SPEED_MAX 15
 
-class Player:public Entity{
+class Player : public Entity {
 
-    //FLAGI KLAWISZY
-    bool Left,Right,Up;
+    bool Left, Right, Up;
 
 public:
     int ammunition[6];
@@ -21,7 +20,7 @@ public:
     Player();
     ~Player();
 
-    void update(sf::Time,float,int);
+    void update(sf::Time, float, int);
     void chooseGun();
     void award(int);
     void ammunitionRestart();

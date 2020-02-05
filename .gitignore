@@ -389,3 +389,5 @@ MigrationBackup/
 *.sln
 *.vcx*
 battle_arena
+.clang-format
+format.py

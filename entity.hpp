@@ -1,6 +1,6 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <iostream>
 
 #include "weapon.hpp"
 
@@ -17,18 +17,17 @@ protected:
     sf::Texture texture;
     sf::Time lastUpdate;
 
-    //HP BAR
     sf::Sprite hpBar;
     sf::Texture hpBarTexture;
 
-    //GRAWITACJA
+    // GRAVITY
     int g;
 
-    //FAZA SKOKU
+    // JUMP PHASE
     float jumpSpeed;
     float fallSpeed;
 
-    enum side{
+    enum side {
         stand,
         fly,
         fall,
@@ -36,11 +35,11 @@ protected:
 
     int movePhase;
 
-    //KLATKI
+    // FRAME INDICATORS
     int frameY;
     int frameX;
 
-    //ZAPAMIETYWANIE OSTATNIEGO KIERUNKU
+    // LAST DIRECTION ENUM
     enum direction {
         inAir,
         left,
@@ -48,14 +47,13 @@ protected:
         none,
     };
 
-    //FLAGI KOLIZYJNE
-    bool cUp,cRight,cDown,cLeft,cNext,repair,rStop,lStop,scUp;//rStop, lStop WYKORZYSTYWANE W RUCHU NPC
+    // COLLISION FLAGS
+    bool cUp, cRight, cDown, cLeft, cNext, repair, rStop, lStop,
+        scUp; // rStop, lStop USED IN NPC
 
-    //KIERUNKI
     int dir;
     int lastDir;
 
-    //MAX HP
     int maxHp;
 
     int score;
@@ -63,7 +61,6 @@ protected:
     bool canSeePlayer;
 
 public:
-    //BROŃ
     Weapon weapon;
 
     int x;
@@ -74,9 +71,7 @@ public:
 
     int hp;
 
-    //COUNTER STRZAŁU
     int sCnt;
-    //FLAGA STRZA£U
     bool canFire;
 
     Entity();
@@ -85,7 +80,7 @@ public:
     void LineCast(sf::Vector2f, sf::Vector2f, int, int);
     void draw(sf::RenderWindow*);
     void resetScore();
-    void collisionDetect(int,int,int,int);
+    void collisionDetect(int, int, int, int);
     std::string getName();
     int getHp();
     int getMaxHp();

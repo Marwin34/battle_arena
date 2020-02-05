@@ -1,10 +1,9 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <iostream>
 
 #include "npc.hpp"
 #define BLOCK_SIZE 32
-//using namespace sf;
 
 class Level {
     int width;
@@ -19,16 +18,14 @@ class Level {
 
     sf::Image tileSet;
 
-    //STRUKTURA DLA KOSTEK NA MAPIE
-    struct brick
-    {
+    struct brick {
         int x;
         int y;
         int width;
         int height;
     };
 
-    struct endGame{
+    struct endGame {
         int x;
         int y;
         sf::Texture textureI;
@@ -36,7 +33,7 @@ class Level {
         sf::Sprite sprite;
     };
 
-    struct gift{
+    struct gift {
         int x;
         int y;
         int value;
@@ -44,20 +41,17 @@ class Level {
         bool active;
     };
 
-    //WEKTOR ODPOWIADAJ¥CY ZA WYŒWIETLANIE POJEDYNCZYCH KOSTEK
-    std::vector <sf::Sprite> sBricks;
-    std::vector <sf::Texture> tBricks;
+    std::vector<sf::Sprite> sBricks;
+    std::vector<sf::Texture> tBricks;
 
 public:
     endGame portal;
 
-    std::vector <gift> gifts;
+    std::vector<gift> gifts;
 
-    //WEKTOR PRZECHOWYWUJ¥CY STRUKTURY NA MAPIE
-    std::vector <brick> bricks;
+    std::vector<brick> bricks;
 
-    //WEKTOR NPC
-    std::vector <NPC> npcList;
+    std::vector<NPC> npcList;
     NPC temporary;
 
     bool completed;
@@ -65,7 +59,7 @@ public:
     Level();
     ~Level();
 
-    bool loadFromFile(std::string,sf::Texture&);
+    bool loadFromFile(std::string, sf::Texture&);
     void update(int);
     void draw(sf::RenderWindow*);
     void decreaseEndConditional();

@@ -1,16 +1,16 @@
-#include <iostream>
-#include <fstream>
-#include <stdio.h>
+#include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
-#include <SFML/Audio.hpp>
+#include <fstream>
+#include <iostream>
+#include <stdio.h>
 
-#include "cnt_txt_lib/cnt_txt.hpp"
 #include "button.hpp"
+#include "cnt_txt_lib/cnt_txt.hpp"
 
 #pragma once
 
- class Gui{
+class Gui {
     int mode;
     int gunsPosition;
     int scorePosition;
@@ -19,16 +19,17 @@
     int pointsPosition2;
     int delayCnt;
     int lastMapIndex;
-    enum state{
-        sScreen,//START
-        rScreen,//DZIA£ANIE
-        eScreen,//RESTART
-        cScrren,//KONIEC
+
+    enum state {
+        sScreen, // START
+        rScreen, // RUNNING
+        eScreen, // RESTART
+        cScrren, // END
     };
+
     std::string scoreString;
     bool hSSaved;
 
-    //OBRAZKI
     sf::Sprite guns[6];
     sf::Texture gunsTexture[6];
     sf::Image gunsImage;
@@ -50,12 +51,8 @@
     sf::Sprite locked;
     sf::Texture lockedTexture;
 
-    //sf::Music winS;
-    //sf::Music loseS;
-
     Counter ammuntion[6];
 
-    //WYŚWIETLANE NAPISY (LICZBOWE ORAZ LITEROWE)
     Text scores;
     Counter points;
     Text eScores;
@@ -76,16 +73,15 @@
     alert mapName;
 
 public:
-
     Gui();
     ~Gui();
     void setMode(std::string);
-    void activeButtons(int,int,int,int&);
-    void initialize(int,int);
+    void activeButtons(int, int, int, int&);
+    void initialize(int, int);
     void switchState(int&);
-    void updateWhilePlaying(int,int,int,int*,int,int,int);
-    void loadHighScores(); // WCZYTYWANIE DANYCH Z PLIKU HS.TXT
+    void updateWhilePlaying(int, int, int, int*, int, int, int);
+    void loadHighScores();
     void saveHighScore(int);
     void resetHSflag();
     void draw(sf::RenderWindow*);
- };
+};

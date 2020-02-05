@@ -1,8 +1,8 @@
-#include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <iostream>
 
-#define BLOCK_SIZE      32
+#define BLOCK_SIZE 32
 #define PI 3.14159265
 #define SPEED 5
 
@@ -18,7 +18,7 @@ public:
     bool toRemove;
     int dmg;
 
-    std::string originName;//IMIE POCHODZENIA
+    std::string originName;
 
     sf::Sprite sprite;
 
@@ -28,7 +28,7 @@ public:
     ~Bullet();
 
     void draw(sf::RenderWindow*);
-    void create(int,int,float,std::string,sf::Texture&,int,int);
+    void create(int, int, float, std::string, sf::Texture&, int, int);
     void update(sf::Time);
-    bool colliding(int,int,int,int);
+    bool colliding(int, int, int, int);
 };
