@@ -67,7 +67,7 @@ Player::Player()
         if (i == 1)
             ammunition[i] = 25;
         if (i > 1)
-            ammunition[i] = 99;
+            ammunition[i] = 0;
     }
 
     score = 0;
