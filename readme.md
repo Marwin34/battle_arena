@@ -6,7 +6,7 @@
 
 ### Description
 
-Battle Arena is 2D plat-former game where u have to kill all enemies in order to advance to next map.The game includes 7 different maps with a few types of enemies.
+Battle Arena is 2D platformer game where you have to kill all enemies in order to advance to next map. The game includes 7 different maps with a few types of enemies.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=HdTBYcorrPQ
 " target="_blank"><img src="http://img.youtube.com/vi/HdTBYcorrPQ/0.jpg"
